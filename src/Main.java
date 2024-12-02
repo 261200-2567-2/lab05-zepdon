@@ -1,17 +1,34 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.print("Hello and welcome!");
+        Player1 player1 = new Player1();
+        Player2 player2 = new Player2();
+        Knuckle knuckle = new Knuckle();
+        Boots boots = new Boots();
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        player1.equipAccessory(knuckle);
+        player2.equipAccessory(boots);
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        System.out.println("\nPlayer1 Class: " + player1.playerClass());
+        System.out.println("HP: " + player1.getHP());
+        System.out.println("Attack: " + player1.getAtk());
+        System.out.println("Mana: " + player1.getMana());
+        System.out.println("Movespeed: " + player1.getMovespeed());
+        player1.displayAccessories();
+
+        System.out.println("\nPlayer2 Class: " + player2.playerClass());
+        System.out.println("HP: " + player2.getHP());
+        System.out.println("Attack: " + player2.getAtk());
+        System.out.println("Mana: " + player2.getMana());
+        System.out.println("Movespeed: " + player2.getMovespeed());
+        player2.displayAccessories();
+
+        System.out.println("\n");
+        player1.punch();
+        knuckle.reduceDurability(10);
+        System.out.println("Knuckle durability after punch: " + knuckle.getDurability());
+
+        player2.backstab();
+        boots.reduceDurability(15);
+        System.out.println("Boots durability after backstab: " + boots.getDurability());
     }
 }
